@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Búsqueda de Imágenes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Josefin+Sans&family=Kalnia:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="BusqSimple.html">Búsqueda Simple</a></li>
+          <li><a href="BusqImagenes.html">Búsqueda de Imágenes</a></li>
+          <li><a href="BusqAvanzada.html">Búsqueda Avanzada</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <h1>Búsqueda de Imágenes en Google</h1>
+    <div class="buscador">
+      <input type="text">
+      <button onclick="window.location.href='https://www.google.com/search?tbm=isch&q='+encodeURIComponent(document.querySelector('input').value)">Búsqueda de Imágenes</button>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda Avanzada</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li><a href="BusqSimple.html">Búsqueda Simple</a></li>
+            <li><a href="BusqImagenes.html">Búsqueda de Imágenes</a></li>
+            <li><a href="BusqAvanzada.html">Búsqueda Avanzada</a></li>
+        </ul>
+    </div>
+    
+    <div class="advanced-search-container">
+        <form action="advanced_search.cgi" method="GET">
+            <label for="all-words">Todas estas palabras:</label>
+            <input type="text" name="all-words" id="all-words"><br>
+            <label for="exact-phrase">Esta palabra o frase exacta:</label>
+            <input type="text" name="exact-phrase" id="exact-phrase"><br>
+            <label for="none-words">Ninguna de estas palabras:</label>
+            <input type="text" name="none-words" id="none-words"><br>
+            <input type="submit" value="Buscar" class="advanced-submit-btn">
+        </form>
+    </div>
+</body>
+</html>

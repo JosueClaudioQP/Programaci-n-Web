@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Búsqueda Avanzada</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Josefin+Sans&family=Kalnia:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="BusqSimple.html">Búsqueda Simple</a></li>
+          <li><a href="BusqImagenes.html">Búsqueda de Imágenes</a></li>
+          <li><a href="BusqAvanzada.html">Búsqueda Avanzada</a></li>
+        </ul>
+      </nav>
+  </header>
+  <main>
+    <h1>Búsqueda Avanzada en Google</h1>
+    <div class="buscador-avanzado-container">
+      <label for="allWords">Todas estas palabras:</label>
+      <input type="text" id="allWords"><br>
+
+      <label for="exactPhrase">Esta palabra o frase exacta:</label>
+      <input type="text" id="exactPhrase"><br>
+
+      <label for="noneWords">Ninguna de estas palabras:</label>
+      <input type="text" id="noneWords"><br>
+
+      <button class="buscador-avanzado-btn" onclick="BuscadorAvanzado()">Buscar</button>
+    </div>
+  </main>
+  <script>
+    function BuscadorAvanzado() {
+        const allWords = document.getElementById('allWords').value;
+        const exactPhrase = document.getElementById('exactPhrase').value;
+        const noneWords = document.getElementById('noneWords').value;
+
+        const url = `https://www.google.com/search?q=${encodeURIComponent(allWords)}+""%22${encodeURIComponent(exactPhrase)}%22+-${encodeURIComponent(noneWords)}`;
+        window.location.href = url;
+    }
+  </script>
+</body>
+</html>
