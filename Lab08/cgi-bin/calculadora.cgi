@@ -12,6 +12,11 @@ if($operacion =~ /^\s*(-?\d+(\.\d+)?)\s*([-+*\/])\s*(-?\d+(\.\d+)?)\s*$/){
     my $operador = $3;
     my $num2 = $4;
     my $resultado;
+
+    if($operador eq "+"){
+        $resultado = $num1 + $num2;
+        print $resultado;
+    }
 }
 print <<HTML;
 <html>
