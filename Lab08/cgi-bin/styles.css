@@ -1,0 +1,44 @@
+body {
+    font-family: 'Kalnia', serif;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: URL(Fondo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    padding: 8px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    font-family: 'Kalnia', serif;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: 'Kalnia', serif;
+    padding-top: 250px;
+}
+
+p {
+    text-align: center;
+    font-family: 'Kalnia', serif;
+    font-size: 32px;
+}
