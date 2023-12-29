@@ -5,6 +5,8 @@ use CGI;
 
 my $cgi = CGI->new;
 print $cgi->header("text/html");
+
+my $operacion = $cgi->param('operacion');
 print <<HTML;
 <html>
     <head>
