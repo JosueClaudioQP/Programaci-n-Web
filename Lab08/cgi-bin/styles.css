@@ -1,6 +1,6 @@
 body {
-    font-family: 'Kalnia', serif;
     margin: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     background-image: URL(Fondo.jpg);
@@ -34,11 +34,21 @@ h1 {
     text-align: center;
     font-size: 80px;
     font-family: 'Kalnia', serif;
-    padding-top: 250px;
 }
 
 p {
     text-align: center;
     font-family: 'Kalnia', serif;
     font-size: 32px;
+}
+  
+.contenido {
+    background-color: white;
+    padding: 20px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    max-width: 600px;
+    text-align: center;
+    opacity: 0.8;
+    border-radius: 5%;
 }
