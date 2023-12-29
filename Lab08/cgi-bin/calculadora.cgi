@@ -6,31 +6,42 @@ use CGI;
 my $cgi = CGI->new;
 print $cgi->header("text/html");
 my $operacion = $cgi->param('operacion');
+my $resp = ""; 
 
-if($operacion =~ /^\s*(-?\d+(\.\d+)?)\s*([-+*\/])\s*(-?\d+(\.\d+)?)\s*$/){
-    my $num1 = $1;
-    my $operador = $3;
-    my $num2 = $4;
-    my $resultado;
+if($operacion){
+    if($operacion =~ /^\s*(-?\d+(\.\d+)?)\s*([-+*\/])\s*(-?\d+(\.\d+)?)\s*$/){
+        my $num1 = $1;
+        my $operador = $3;
+        my $num2 = $4;
+        my $resultado;
 
-    if($operador eq "+"){
-        $resultado = $num1 + $num2;
-        print $resultado;
-    } elsif ($operador eq "-"){
-        $resultado = $num1 - $num2;
-        print $resultado;
-    } elsif ($operador eq "*"){
-        $resultado = $num1 * $num2;
-        print $resultado;
-    } elsif ($operador eq "/"){
-        if($num2 != 0){
-            $resultado = $num1 / $num2;
-            print $resultado;
-        } else {
-            print "Error";
+        if($operador eq "+"){
+            $resultado = $num1 + $num2;
+            $resp = $resultado;
+        } elsif ($operador eq "-"){
+            $resultado = $num1 - $num2;
+            $resp = $resultado;
+        } elsif ($operador eq "*"){
+            $resultado = $num1 * $num2;
+            $resp = $resultado;
+        } elsif ($operador eq "/"){
+            if($num2 != 0){
+                $resultado = $num1 / $num2;
+                $resp = $resultado;
+            } else {
+                $resp = "<p>Error, no es posible dividir entre 0</p>";
+            }
         }
+        if (defined $resultado) {
+            $resp = "<p>Resultado: $resultado</p>";
+        }
+    } else {
+        $resp = "<p>Ingresar 2 numeros y un signo aritmetico</p>";
     }
+} else {
+     $resp = "<p>No se han ingresado datos</p>";
 }
+
 print <<HTML;
 <html>
     <head>
@@ -46,6 +57,7 @@ print <<HTML;
                 <input type="text" name="operacion"><br>
                 <input type="submit" value="Calcular">
             </form>
+            $resp
         </div>
     </body>
 </html>
