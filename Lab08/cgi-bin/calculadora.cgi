@@ -23,8 +23,12 @@ if($operacion =~ /^\s*(-?\d+(\.\d+)?)\s*([-+*\/])\s*(-?\d+(\.\d+)?)\s*$/){
         $resultado = $num1 * $num2;
         print $resultado;
     } elsif ($operador eq "/"){
-        $resultado = $num1 / $num2;
-        print $resultado;
+        if($num2 != 0){
+            $resultado = $num1 / $num2;
+            print $resultado;
+        } else {
+            print "Error";
+        }
     }
 }
 print <<HTML;
