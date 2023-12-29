@@ -16,6 +16,15 @@ if($operacion =~ /^\s*(-?\d+(\.\d+)?)\s*([-+*\/])\s*(-?\d+(\.\d+)?)\s*$/){
     if($operador eq "+"){
         $resultado = $num1 + $num2;
         print $resultado;
+    } elsif ($operador eq "-"){
+        $resultado = $num1 - $num2;
+        print $resultado;
+    } elsif ($operador eq "*"){
+        $resultado = $num1 * $num2;
+        print $resultado;
+    } elsif ($operador eq "/"){
+        $resultado = $num1 / $num2;
+        print $resultado;
     }
 }
 print <<HTML;
