@@ -29,3 +29,15 @@ print <<HTML;
     </body>
 </html>
 HTML
+
+open(IN,"base.csv") or die "<h1>ERROR: open file</h1>\n";
+print "<table border='1'>";
+while (my $fila = <IN>) {
+    print "<tr>";
+        print "<td>$fila</td>";
+    print "</tr>";
+}
+print "</table>";
+close(IN);
+
+
